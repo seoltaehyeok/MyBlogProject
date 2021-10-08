@@ -3,13 +3,15 @@
 # User
 로그인 환경 제공
 
-아이디(PK) / 패스워드 / 이메일 / 역할(ex. 관리자, 회원, 매니저) / 사용자명 / 현재시간
+아이디(PK) / 패스워드 / 이메일 / 역할(ex. 관리자, 회원, 매니저) / 사용자명 / 로그인시간
 # Reply
+게시물에 대한 답변 게시판 환경 제공
 
+아이디(PK) / 콘텐츠(게시물) / 게시물의 답글(FK) / 답변자명(FK) / 답글 작성시간
 # Board
 게시판&게시물 환경 제공
 
-아이디(PK) / 콘텐츠(게시물) / 조회수 / 사용자명(FK) / 시간표
+아이디(PK) / 콘텐츠(제목) / 콘텐츠(게시물) / 조회수 / 작성자명(FK) / 작성시간
 # yml
     jpa:
         open-in-view: true
@@ -44,4 +46,4 @@ create상태로 컴파일시 콘솔창:
 # Workbanch
 table create
 
-<img src="https://user-images.githubusercontent.com/83220871/136510865-1f58d224-59e3-4b62-b257-b2dff0fca0a7.png" width="200" height="150"/> <img src="https://user-images.githubusercontent.com/83220871/136516718-d641c0dc-b1b8-4f5e-9cd7-d8adbe8bea30.png" width="200" height="150"/>
+<img src="https://user-images.githubusercontent.com/83220871/136510865-1f58d224-59e3-4b62-b257-b2dff0fca0a7.png" width="200" height="150"/> <img src="https://user-images.githubusercontent.com/83220871/136516718-d641c0dc-b1b8-4f5e-9cd7-d8adbe8bea30.png" width="200" height="150"/> <img src="https://user-images.githubusercontent.com/83220871/136522001-48107d3e-b86c-4a3a-89bf-4ea6f0152376.png" width="200" height="150"/>

@@ -11,7 +11,7 @@
 # Board
 게시판&게시물 환경 제공
 
-아이디(PK) / 콘텐츠(제목) / 콘텐츠(게시물) / 조회수 / 작성자명(FK) / 작성시간
+아이디(PK) / 콘텐츠(제목) / 콘텐츠(게시물) / 조회수 / 작성자명(FK) / 작성시간 / reply(Board를 select 할때 reply 필요)
 # yml
     jpa:
         open-in-view: true

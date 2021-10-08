@@ -1,18 +1,15 @@
 # MyBlogProject
 
 # User
-@ID / @GenerateValue // id가 자동으로 입력됨
+로그인 환경 제공
 
-id
-@Column(nullable = false, length = 30)
-username / password / email
-
-@CreationTimestamp // 현재시간이 자동으로 입력됨
-createDate
+아이디(PK) / 패스워드 / 이메일 / 역할(ex. 관리자, 회원, 매니저) / 사용자명 / 현재시간
 # Reply
 
 # Board
+게시판&게시물 환경 제공
 
+아이디(PK) / 콘텐츠(게시물) / 조회수 / 사용자명(FK) / 시간표
 # yml
     jpa:
         open-in-view: true
@@ -47,4 +44,4 @@ create상태로 컴파일시 콘솔창:
 # Workbanch
 table create
 
-<img src="https://user-images.githubusercontent.com/83220871/136510865-1f58d224-59e3-4b62-b257-b2dff0fca0a7.png" width="200" height="150"/>
+<img src="https://user-images.githubusercontent.com/83220871/136510865-1f58d224-59e3-4b62-b257-b2dff0fca0a7.png" width="200" height="150"/> <img src="https://user-images.githubusercontent.com/83220871/136516718-d641c0dc-b1b8-4f5e-9cd7-d8adbe8bea30.png" width="200" height="150"/>

@@ -1,5 +1,9 @@
 # MyBlogProject
 
+# 구현 CRUD
+
+계정생성 / 이메일, 비밀번호 변경기능 / 페이지 / 예외처리
+
 # User
 로그인 환경 제공
 
@@ -11,7 +15,7 @@
 # Board
 게시판&게시물 환경 제공
 
-아이디(PK) / 콘텐츠(제목) / 콘텐츠(게시물) / 조회수 / 작성자명(FK) / 작성시간 / reply(Board를 select 할때 reply 필요)
+아이디(PK) / 콘텐츠(제목) / 콘텐츠(게시물) / 조회수 / 작성자명(FK) / 작성시간 / 게시물의 답글(Board를 select 할때 reply 필요)
 # yml
     jpa:
         open-in-view: true

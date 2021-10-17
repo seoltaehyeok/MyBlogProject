@@ -51,3 +51,7 @@ create상태로 컴파일시 콘솔창:
 table create
 
 <img src="https://user-images.githubusercontent.com/83220871/136510865-1f58d224-59e3-4b62-b257-b2dff0fca0a7.png" width="200" height="150"/> <img src="https://user-images.githubusercontent.com/83220871/136516718-d641c0dc-b1b8-4f5e-9cd7-d8adbe8bea30.png" width="200" height="150"/> <img src="https://user-images.githubusercontent.com/83220871/136522001-48107d3e-b86c-4a3a-89bf-4ea6f0152376.png" width="200" height="150"/>
+
+# Keypoint
+
+username 즉, 아이디의 경우 중복되면 안되므로 unique=true를 통해 고유값 지정

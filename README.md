@@ -2,7 +2,7 @@
 
 # 구현 CRUD
 
-계정생성 / 이메일, 비밀번호 변경기능 / 페이지 / 예외처리
+계정생성 / 이메일, 비밀번호 변경기능 / 페이지(홈, 로그인, 회원가입) / 예외처리
 
 # User
 로그인 환경 제공
@@ -53,5 +53,4 @@ table create
 <img src="https://user-images.githubusercontent.com/83220871/136510865-1f58d224-59e3-4b62-b257-b2dff0fca0a7.png" width="200" height="150"/> <img src="https://user-images.githubusercontent.com/83220871/136516718-d641c0dc-b1b8-4f5e-9cd7-d8adbe8bea30.png" width="200" height="150"/> <img src="https://user-images.githubusercontent.com/83220871/136522001-48107d3e-b86c-4a3a-89bf-4ea6f0152376.png" width="200" height="150"/>
 
 # Keypoint
-
 username 즉, 아이디의 경우 중복되면 안되므로 unique=true를 통해 고유값 지정

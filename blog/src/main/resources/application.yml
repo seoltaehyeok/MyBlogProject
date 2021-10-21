@@ -1,0 +1,46 @@
+#server.port: 8000
+#spring:
+#  devtools.livereload.enabled: false
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
+#    username: blog
+#    password: kk8691
+
+server:
+  port: 8000
+  servlet:
+    context-path: /blog
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+    
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
+    username: blog
+    password: kk8691
+    
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update # (create, none, update) 최초: craate, 그 후 update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false
+    show-sql: true  # 콘솔창에 보이게끔 출력
+    properties:
+      hibernate:
+        format_sql: true  # 가독성 좋게 들여쓰기 사용
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+      

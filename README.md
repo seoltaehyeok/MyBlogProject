@@ -57,12 +57,30 @@ username 즉, 아이디의 경우 중복되면 안되므로 unique=true를 통�
 
 
 ## <인증>
+    @Configuration // 빈 등록 (IoC)
+    @EnableWebSecurity // 시큐리티 필터가 등록이 된다.
+    @EnableGlobalMethodSecurity(prePostEnabled= true) // 특정 주소로 접근을 하면 권한 및 인증을 미리 체크
+    public class SecurityConfig extends WebSecurityConfigurerAdapter{
+
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http
+                .authorizeRequests() // request가 들어오면
+                    .antMatchers("/auth/**") // /auth로 시작하는 것들은
+                    .permitAll()		// 모두 허가
+                    .anyRequest() // 다른 모든 요청은
+                    .authenticated() // 인증이 필요함
+                .and()
+                    .formLogin()
+                    .loginPage("/auth/loginForm"); // 인증이 필요할 경우 로그인 페이지로 이동
+        }
+    }
+
 ### 인증 필요
 글쓰기(/board/form), 회원정보(/user/form), 로그아웃(/logout)
 
 ### 인증 불필요(/auth)
 로그인(auth/loginForm), 회원가입(auth/joinForm), 회원가입 서버(auth/joinProc)
 
-### 인증되지 않은 페이지 요청시
-<img src ="https://user-images.githubusercontent.com/83220871/139433684-2dff0f0d-9358-4ef3-8391-9ea01e90367c.png" width="600" height="200"/>
-
+### 인증되지 않은 페이지 요청시 로그인 페이지로 이동
+<img src ="https://user-images.githubusercontent.com/83220871/139435473-340e56f4-13f8-48ff-ab00-4080b51b1094.png" width="300" height="200"/>

@@ -1,22 +1,22 @@
 # MyBlogProject
 
-# 구현 CRUD
+## 구현 CRUD
 
 계정생성 / 이메일, 비밀번호 변경기능 / 페이지(홈, 로그인, 회원가입) / 예외처리
 
-# User
+## User
 로그인 환경 제공
 
 아이디(PK) / 패스워드 / 이메일 / 역할(ex. 관리자, 회원, 매니저) / 사용자명 / 로그인시간
-# Reply
+## Reply
 게시물에 대한 답변 게시판 환경 제공
 
 아이디(PK) / 콘텐츠(게시물) / 게시물의 답글(FK) / 답변자명(FK) / 답글 작성시간
-# Board
+## Board
 게시판&게시물 환경 제공
 
 아이디(PK) / 콘텐츠(제목) / 콘텐츠(게시물) / 조회수 / 작성자명(FK) / 작성시간 / 게시물의 답글(Board를 select 할때 reply 필요)
-# yml
+## yml
     jpa:
         open-in-view: true
         hibernate:
@@ -47,10 +47,22 @@ create상태로 컴파일시 콘솔창:
 
         기존의 테이블을 삭제 후 새로운 테이블을 생성함
 
-# Workbench
+## Workbench
 table create
 
 <img src="https://user-images.githubusercontent.com/83220871/136510865-1f58d224-59e3-4b62-b257-b2dff0fca0a7.png" width="200" height="150"/> <img src="https://user-images.githubusercontent.com/83220871/136516718-d641c0dc-b1b8-4f5e-9cd7-d8adbe8bea30.png" width="200" height="150"/> <img src="https://user-images.githubusercontent.com/83220871/136522001-48107d3e-b86c-4a3a-89bf-4ea6f0152376.png" width="200" height="150"/>
 
-# Keypoint
+## Keypoint
 username 즉, 아이디의 경우 중복되면 안되므로 unique=true를 통해 고유값 지정
+
+
+## <인증>
+### 인증 필요
+글쓰기(/board/form), 회원정보(/user/form), 로그아웃(/logout)
+
+### 인증 불필요(/auth)
+로그인(auth/loginForm), 회원가입(auth/joinForm), 회원가입 서버(auth/joinProc)
+
+### 인증되지 않은 페이지 요청시
+<img src ="https://user-images.githubusercontent.com/83220871/139433684-2dff0f0d-9358-4ef3-8391-9ea01e90367c.png" width="600" height="200"/>
+

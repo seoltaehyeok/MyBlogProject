@@ -72,7 +72,7 @@ username 즉, 아이디의 경우 중복되면 안되므로 unique=true를 통�
         protected void configure(HttpSecurity http) throws Exception {
             http
                 .authorizeRequests() // request가 들어오면
-                    .antMatchers("/auth/**", "/js/**", "/css/**", "/image/**") // /auth로 시작하는 것들은
+                    .antMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**") // 다음의 주소들은
                     .permitAll()		// 모두 허가
                     .anyRequest() // 다른 모든 요청은
                     .authenticated() // 인증이 필요함

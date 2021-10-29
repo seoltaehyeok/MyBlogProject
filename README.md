@@ -60,13 +60,19 @@ username 즉, 아이디의 경우 중복되면 안되므로 unique=true를 통�
     @Configuration // 빈 등록 (IoC)
     @EnableWebSecurity // 시큐리티 필터가 등록이 된다.
     @EnableGlobalMethodSecurity(prePostEnabled= true) // 특정 주소로 접근을 하면 권한 및 인증을 미리 체크
+
     public class SecurityConfig extends WebSecurityConfigurerAdapter{
+
+        @Bean // IoC가 된다. => return 값을 spring이 관리함
+        public BCryptPasswordEncoder encodePWD() {
+            return new BCryptPasswordEncoder();
+        }
 
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             http
                 .authorizeRequests() // request가 들어오면
-                    .antMatchers("/auth/**") // /auth로 시작하는 것들은
+                    .antMatchers("/auth/**", "/js/**", "/css/**", "/image/**") // /auth로 시작하는 것들은
                     .permitAll()		// 모두 허가
                     .anyRequest() // 다른 모든 요청은
                     .authenticated() // 인증이 필요함
@@ -84,3 +90,13 @@ username 즉, 아이디의 경우 중복되면 안되므로 unique=true를 통�
 
 ### 인증되지 않은 페이지 요청시 로그인 페이지로 이동
 <img src ="https://user-images.githubusercontent.com/83220871/139435473-340e56f4-13f8-48ff-ab00-4080b51b1094.png" width="300" height="200"/>
+
+### 비밀번호 해쉬(암호화)
+    @Transactional // 하나의 로직이 됨 (전체가 성공하면 commit, 실패시 롤백)
+	public void 회원가입(User user) {
+		String rawPassword = user.getPassword(); // 1234원문
+		String encPassword = encoder.encode(rawPassword); // 해쉬
+		user.setPassword(encPassword); // 해쉬한 값을 비밀번호에 넣어줌
+		user.setRole(RoleType.USER);
+		userRepository.save(user);
+	}

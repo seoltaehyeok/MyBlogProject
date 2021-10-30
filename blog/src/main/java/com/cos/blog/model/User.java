@@ -35,7 +35,7 @@ public class User {
 	@Column(nullable = false, length = 100)
 	private String password;
 	
-	@Column(nullable = false, length = 50)
+	@Column(nullable = false, length = 50, unique=true) // 이메일의 경우 중복되면 안되므로 unique=true로 고유값지정
 	private String email;
 	
 	// @ColumnDefault("user")

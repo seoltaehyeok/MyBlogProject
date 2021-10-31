@@ -13,8 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.AllArgsConstructor;
@@ -40,7 +38,6 @@ public class Board {
 	@Lob // 대용량 데이터 사용시
 	private String content; // 섬머노트 라이브러리 사용 <html>태그 섞여서 디자인됨
 	
-	@ColumnDefault("0")
 	private int count; // 조회수
 	
 	// fetch = FetchType.EAGER (Board를 select 할때도 user는 필요하므로 EAGER 사용)

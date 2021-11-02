@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="layout/header.jsp"%>
-<div class="container">
+<div class="container" >
 
 	<!-- 요청정보가 넘어올때 JSTL의 EL 표현식: boards를 받을 수 있음 -->
 	<c:forEach var="board" items="${boards.content}">
@@ -11,7 +11,7 @@
 			<div class="card-body">
 				<h4 class="card-title">${board.title}</h4>
 				<!-- board.getTitle() 이 호출되는것과 같은 원리 -->
-				<a href="#" class="btn btn-primary">See Post</a>
+				<a href="/board/${board.id}" class="btn btn-primary">See Post</a>
 			</div>
 		</div>
 	</c:forEach>

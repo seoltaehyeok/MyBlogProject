@@ -5,6 +5,10 @@ let index = {
 			this.save();
 		});
 		
+			$("#btn-update").on("click", () => { // function() {}, ()=> {} this를 바인딩 하기 위해 사용
+			this.update();
+		});
+		
 		// 기존 로그인 방식 사용x
 		/*$("#btn-login").on("click", () => { // function() {}, ()=> {} this를 바인딩 하기 위해 사용
 			this.login();
@@ -39,6 +43,28 @@ let index = {
 			alert(JSON.stringify(error));
 		});
 	},
+	
+	update: function() {
+		let data = {
+			id: $("#id").val(),
+			password: $("#password").val(),
+			email: $("#email").val()
+		};
+
+		$.ajax({
+			type: "PUT",
+			url: "/user",
+			data: JSON.stringify(data),
+			contentType: "application/json; charset=utf-8", 
+			dataType: "json"
+		}).done(function() {
+			alert("회원 수정이 완료되었습니다.");
+			location.href = "/";
+		}).fail(function(error) {
+			alert(JSON.stringify(error));
+		});
+	},
+	
 }
 
 index.init();

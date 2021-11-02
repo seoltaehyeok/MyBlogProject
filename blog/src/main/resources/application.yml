@@ -35,7 +35,7 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       use-new-id-generator-mappings: false
-    show-sql: true  # 콘솔창에 보이게끔 출력
+    # show-sql: true  # 콘솔창에 보이게끔 출력
     properties:
       hibernate:
       format_sql: true  # 가독성 좋게 들여쓰기 사용

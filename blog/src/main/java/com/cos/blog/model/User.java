@@ -29,8 +29,11 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // 프로젝트에서 연결된 DB의 넘버링 전략을 따라간다.
 	private int id; // Oracle: 시퀀스 / mysql: auto_increment
 	
-	@Column(nullable = false, length = 30, unique= true) // 아이디의 경우 중복되면 안되므로 unique=true로 고유값지정
+	@Column(nullable = false, length = 100, unique= true) // 아이디의 경우 중복되면 안되므로 unique=true로 고유값지정
 	private String username; // 아이디
+	
+
+	private String oauth; // kakao, google
 	
 	@Column(nullable = false, length = 100)
 	private String password;

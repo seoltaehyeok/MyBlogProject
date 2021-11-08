@@ -44,3 +44,6 @@ spring:
     serialization:
       fail-on-empty-beans: false
       
+cos:
+  key: cos1234 # 카카오로그인 하는사람들의 회원가입시 패스워드를 고정
+      

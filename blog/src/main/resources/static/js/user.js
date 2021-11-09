@@ -35,10 +35,15 @@ let index = {
 			data: JSON.stringify(data), // (http body 데이터) JS의 데이터를 JAVA에게 보낼 때 JSON 문자열을 사용하여 보내야 호환가능
 			contentType: "application/json; charset=utf-8", // http body데이터가 어떤 타입인지(MIME)
 			dataType: "json" // 요청을 서버로 해서 응답이 왔을 때 생긴것이  Json이라면 java 오브젝트로 변경
-		}).done(function() { // 정상일때
+		}).done(function(resp) { // 정상일때
+		if(resp.status === 500){
+			alert("회원가입에 실패하였습니다.")
+		}
+		else {
 			alert("회원가입이 완료되었습니다.");
-			//onsole.log(resp);
 			location.href = "/";
+			}
+			
 		}).fail(function(error) { // 실패일때
 			alert(JSON.stringify(error));
 		});
